@@ -4,8 +4,7 @@
 class Animal
 {
 public:
-	bool isSet = false;
-	virtual void set() = 0;
+	//bool isSet = false;
 	virtual void describe() = 0;
 
 	inline virtual ~Animal()

@@ -4,7 +4,7 @@ class Bird : public Animal
 {
 	std::string food, geographicRange;
 public:
-	void set();
+	Bird();
 	void describe();
 };
 

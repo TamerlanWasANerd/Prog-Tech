@@ -4,6 +4,6 @@ class Fish : public Animal
 {
 	std::string food;
 public:
-	void set();
+	Fish();
 	void describe();
 };

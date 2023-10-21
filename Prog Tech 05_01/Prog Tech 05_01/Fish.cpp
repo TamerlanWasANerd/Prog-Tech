@@ -1,10 +1,13 @@
 #include "Fish.h"
 
-void Fish::set()
+Fish::Fish()
 {
-	// TODO
-	std::cout << std::endl;
-	isSet = true;
+	std::cout << "Enter fish's breed: ";
+	std::cin >> breed;
+	std::cout << "Enter fish's color: ";
+	std::cin >> color;
+	std::cout << "Enter fish's food: ";
+	std::cin >> food;
 }
 
 void Fish::describe()
@@ -12,5 +15,5 @@ void Fish::describe()
 	std::cout
 		<< "Breed: " << breed << '\n'
 		<< "Color: " << color << '\n'
-		<< "Food: " << food << "\n\n";
+		<< "Food: " << food << '\n';
 }

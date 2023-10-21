@@ -1,0 +1,18 @@
+Birds: 
+Breed: 1
+Color: 2
+Food: 3
+Range: 4
+
+Cats: 
+Breed: 6
+Color: 7
+Name: 5
+Owner: 8 9 10
+
+Fish: 
+Breed: 11
+Color: 12
+Food: 13
+
+			

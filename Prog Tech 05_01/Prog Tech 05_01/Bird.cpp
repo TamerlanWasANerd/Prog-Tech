@@ -1,10 +1,15 @@
 #include "Bird.h"
 
-void Bird::set()
+Bird::Bird()
 {
-	// TODO
-	std::cout << std::endl;
-	isSet = true;
+	std::cout << "Enter bird's breed: ";
+	std::cin >> breed;
+	std::cout << "Enter bird's color: ";
+	std::cin >> color;
+	std::cout << "Enter bird's food: ";
+	std::cin >> food;
+	std::cout << "Enter bird's range: ";
+	std::cin >> geographicRange;
 }
 
 void Bird::describe()
@@ -13,5 +18,5 @@ void Bird::describe()
 		<< "Breed: " << breed << '\n'
 		<< "Color: " << color << '\n'
 		<< "Food: " << food << '\n'
-		<< "Range: " << geographicRange << "\n\n";
+		<< "Range: " << geographicRange << '\n';
 }

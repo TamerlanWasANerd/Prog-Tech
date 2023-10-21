@@ -5,7 +5,7 @@ class Cat : public Animal
 	std::string name, ownerFirstName, ownerMiddleName, ownerLastName;
 
 public:
-	void set();
+	Cat();
 	void describe();
 };
 
