@@ -2,10 +2,10 @@
 #include "Animal.h"
 class Cat : public Animal
 {
+public:
 	std::string name, ownerFirstName, ownerMiddleName, ownerLastName;
 
-public:
-	Cat();
+	void createCat();
 	void describe();
 };
 

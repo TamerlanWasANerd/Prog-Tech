@@ -1,6 +1,6 @@
 #include "Fish.h"
 
-Fish::Fish()
+void Fish::createFish()
 {
 	std::cout << "Enter fish's breed: ";
 	std::cin >> breed;
@@ -12,8 +12,5 @@ Fish::Fish()
 
 void Fish::describe()
 {
-	std::cout
-		<< "Breed: " << breed << '\n'
-		<< "Color: " << color << '\n'
-		<< "Food: " << food << '\n';
+	std::cout << "Fish " << breed << ' ' << color << ' ' << food << '\n';
 }

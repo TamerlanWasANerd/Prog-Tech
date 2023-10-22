@@ -1,6 +1,6 @@
 #include "Bird.h"
 
-Bird::Bird()
+void Bird::createBird()
 {
 	std::cout << "Enter bird's breed: ";
 	std::cin >> breed;
@@ -14,9 +14,5 @@ Bird::Bird()
 
 void Bird::describe()
 {
-	std::cout
-		<< "Breed: " << breed << '\n'
-		<< "Color: " << color << '\n'
-		<< "Food: " << food << '\n'
-		<< "Range: " << geographicRange << '\n';
+	std::cout << "Bird " << breed << ' ' << color << ' ' << food << ' ' << geographicRange << '\n';
 }

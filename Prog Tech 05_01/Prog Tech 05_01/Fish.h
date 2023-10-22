@@ -2,8 +2,9 @@
 #include "Animal.h"
 class Fish : public Animal
 {
-	std::string food;
 public:
-	Fish();
+	std::string food;
+
+	void createFish();
 	void describe();
 };

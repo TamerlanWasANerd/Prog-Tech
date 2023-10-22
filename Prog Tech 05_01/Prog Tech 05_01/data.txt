@@ -1,18 +1,4 @@
-Birds: 
-Breed: 1
-Color: 2
-Food: 3
-Range: 4
-
-Cats: 
-Breed: 6
-Color: 7
-Name: 5
-Owner: 8 9 10
-
-Fish: 
-Breed: 11
-Color: 12
-Food: 13
-
+Bird 1 2 3 4
+Fish 22 55 66
+Fish 154 6456251 564856das
 			

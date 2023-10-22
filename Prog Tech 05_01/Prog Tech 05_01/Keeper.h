@@ -19,7 +19,7 @@ public:
 	bool removeFish(int index);
 
 	void save();
-	void load();
+	bool load();
 
-	void describe();
+	bool describe();
 };

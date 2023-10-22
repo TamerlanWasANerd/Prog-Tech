@@ -2,9 +2,10 @@
 #include "Animal.h"
 class Bird : public Animal
 {
-	std::string food, geographicRange;
 public:
-	Bird();
+	std::string food, geographicRange;
+
+	void createBird();
 	void describe();
 };
 

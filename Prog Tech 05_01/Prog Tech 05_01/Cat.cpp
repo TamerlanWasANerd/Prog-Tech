@@ -1,6 +1,6 @@
 #include "Cat.h"
 
-Cat::Cat()
+void Cat::createCat()
 {
 	std::cout << "Enter cat's name: ";
 	std::cin >> name;
@@ -20,8 +20,6 @@ Cat::Cat()
 void Cat::describe()
 {
 	std::cout
-		<< "Breed: " << breed << '\n'
-		<< "Color: " << color << '\n'
-		<< "Name: " << name << '\n'
-		<< "Owner: " << ownerFirstName << " " << ownerMiddleName << " " << ownerLastName << '\n';
+		<< "Cat " << name << ' ' << breed << ' ' << color << ' '
+		<< ownerFirstName << ' ' << ownerMiddleName << ' ' << ownerLastName << '\n';
 }

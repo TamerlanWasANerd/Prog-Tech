@@ -10,7 +10,7 @@ public:
 	inline virtual ~Animal()
 	{
 	}
-protected:
+
 	std::string breed, color;
 };
 

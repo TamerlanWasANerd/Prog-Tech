@@ -1,24 +1,29 @@
 #include "Keeper.h"
 #include <fstream>
 #include <string>
+#include <sstream>
 
 void Keeper::addBird()
 {
-	Bird newBird = Bird();
+	Bird newBird;
+
+	newBird.createBird();
 
 	birds.push_back(newBird);
 }
 
 void Keeper::addCat()
 {
-	Cat newCat = Cat();
+	Cat newCat;
+	newCat.createCat();
 
 	cats.push_back(newCat);
 }
 
 void Keeper::addFish()
 {
-	Fish newFish = Fish();
+	Fish newFish;
+	newFish.createFish();
 
 	fish.push_back(newFish);
 }
@@ -74,37 +79,91 @@ void Keeper::save()
 	std::cout.rdbuf(oldCout);
 }
 
-void Keeper::load()
+bool Keeper::load()
 {
-	// TODO
-	std::ifstream file("data.txt");
-	std::string string;
+	birds.clear();
+	cats.clear();
+	fish.clear();
 
-	while (string != "\t\t\t")
+	std::ifstream file("data.txt");
+	std::string line, type ;
+
+	while (line != "\t\t\t")
 	{
-		file >> string;
+		std::getline(file, line);
+
+		if (line == "\t\t\t") return true;
+
+		std::istringstream stream(line);
+
+		stream >> type;
+
+		if (type == "Bird")
+		{
+			Bird newBird;
+
+			stream >> newBird.breed;
+			stream >> newBird.color;
+			stream >> newBird.food;
+			stream >> newBird.geographicRange;
+
+			birds.push_back(newBird);
+		}
+		else if (type == "Cat")
+		{
+			Cat newCat;
+
+			stream >> newCat.name;
+			stream >> newCat.breed;
+			stream >> newCat.color;
+			stream >> newCat.ownerFirstName;
+			stream >> newCat.ownerMiddleName;
+			stream >> newCat.ownerLastName;
+
+			cats.push_back(newCat);
+		}
+		else if (type == "Fish")
+		{
+			Fish newFish;
+
+			stream >> newFish.breed;
+			stream >> newFish.color;
+			stream >> newFish.food;
+
+			fish.push_back(newFish);
+		}
+		else
+		{
+			std::cout << "Invalid save file!\n";
+			return false; 
+		}
 	}
 
+	return true;
 }
 
 
-void Keeper::describe()
+bool Keeper::describe()
 {
-	std::cout << "Birds: \n";
+	if (birds.empty() && cats.empty() && fish.empty())
+	{
+		return false;
+	}
+
 	for (Bird a : birds)
 	{
 		a.describe();
 	}
 
-	std::cout << "Cats: \n";
 	for (Cat a : cats)
 	{
 		a.describe();
 	}
 
-	std::cout << "Fish: \n";
 	for (Fish a : fish)
 	{
 		a.describe();
 	}
+
+	return true;
 }
