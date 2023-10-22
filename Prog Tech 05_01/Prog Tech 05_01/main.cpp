@@ -6,15 +6,19 @@ int main()
 {
 	Keeper keeper;
 	char c;
+	int index;
 
 	menu:
 	std::cout
 		<< "1. Add bird\n"
 		<< "2. Add cat\n"
 		<< "3. Add fish\n"
-		<< "4. Display contents\n"
-		<< "5. Save to file\n"
-		<< "6. Load from file\n"
+		<< "4. Remove bird\n"
+		<< "5. Remove cat\n"
+		<< "6. Remove fish\n"
+		<< "7. Display contents\n"
+		<< "8. Save to file\n"
+		<< "9. Load from file\n"
 		<< "0. Exit\n\n";
 
 	
@@ -34,16 +38,34 @@ keyscan:
 
 		break;
 	case '4':
-		if(!keeper.describe()) std::cout << "Nothing to display!\n";
+		std::cout << "Enter index of bird to be removed: ";
+		std::cin >> index;
+		keeper.removeBird(index);
 
 		break;
 	case '5':
+		std::cout << "Enter index of cat to be removed: ";
+		std::cin >> index;
+		keeper.removeCat(index);
+
+		break;
+	case '6':
+		std::cout << "Enter index of fish to be removed: ";
+		std::cin >> index;
+		keeper.removeFish(index);
+
+		break;
+	case '7':
+		if(!keeper.describe()) std::cout << "Nothing to display!\n";
+
+		break;
+	case '8':
 		keeper.save();
 
 		std::cout << "Saved!\n";
 
 		break;
-	case '6':
+	case '9':
 		keeper.load();
 
 		std::cout << "Loaded!\n";
