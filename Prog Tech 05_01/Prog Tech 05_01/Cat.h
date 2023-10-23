@@ -8,4 +8,3 @@ public:
 	void createCat();
 	void describe();
 };
-

@@ -8,7 +8,7 @@ int main()
 	char c;
 	int index;
 
-	menu:
+menu:
 	std::cout
 		<< "1. Add bird\n"
 		<< "2. Add cat\n"
@@ -21,7 +21,7 @@ int main()
 		<< "9. Load from file\n"
 		<< "0. Exit\n\n";
 
-	
+
 keyscan:
 	switch (c = _getch())
 	{
@@ -56,7 +56,7 @@ keyscan:
 
 		break;
 	case '7':
-		if(!keeper.describe()) std::cout << "Nothing to display!\n";
+		if (!keeper.describe()) std::cout << "Nothing to display!\n";
 
 		break;
 	case '8':

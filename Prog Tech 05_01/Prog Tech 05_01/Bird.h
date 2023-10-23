@@ -8,4 +8,3 @@ public:
 	void createBird();
 	void describe();
 };
-
