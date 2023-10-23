@@ -1,5 +1,30 @@
 #include "Cat.h"
 
+Cat::Cat()
+{
+}
+
+Cat::Cat(std::string name, std::string breed, std::string color, 
+	std::string ownerFirstName, std::string ownerMiddleName, std::string ownerLastName)
+{
+	this->name = name;
+	this->breed = breed;
+	this->color = color;
+	this->ownerFirstName = ownerFirstName;
+	this->ownerMiddleName = ownerMiddleName;
+	this->ownerLastName = ownerLastName;
+}
+
+Cat::Cat(Cat* copyFrom)
+{
+	name = copyFrom->name;
+	breed = copyFrom->breed;
+	color = copyFrom->color;
+	ownerFirstName = copyFrom->ownerFirstName;
+	ownerMiddleName = copyFrom->ownerMiddleName;
+	ownerLastName = copyFrom->ownerLastName;
+}
+
 void Cat::createCat()
 {
 	std::cout << "Enter cat's name: ";

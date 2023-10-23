@@ -1,5 +1,25 @@
 #include "Bird.h"
 
+Bird::Bird()
+{
+}
+
+Bird::Bird(std::string breed, std::string color, std::string food, std::string geographicRange)
+{
+	this->breed = breed;
+	this->color = color;
+	this->food = food;
+	this->geographicRange = geographicRange;
+}
+
+Bird::Bird(Bird* copyFrom)
+{
+	breed = copyFrom->breed;
+	color = copyFrom->color;
+	food = copyFrom->food;
+	geographicRange = copyFrom->geographicRange;
+}
+
 void Bird::createBird()
 {
 	std::cout << "Enter bird's breed: ";

@@ -10,6 +10,10 @@ class Keeper
 	std::vector<Cat> cats;
 	std::vector<Fish> fish;
 public:
+	Keeper();
+	Keeper(std::vector<Bird> birds,	std::vector<Cat> cats,	std::vector<Fish> fish);
+	Keeper(Keeper* copyFrom);
+
 	void addBird();
 	void addCat();
 	void addFish();

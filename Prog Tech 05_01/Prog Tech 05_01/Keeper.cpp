@@ -3,6 +3,24 @@
 #include <string>
 #include <sstream>
 
+Keeper::Keeper()
+{
+}
+
+Keeper::Keeper(std::vector<Bird> birds, std::vector<Cat> cats, std::vector<Fish> fish)
+{
+	this->birds = birds;
+	this->cats = cats;
+	this->fish = fish;
+}
+
+Keeper::Keeper(Keeper* copyFrom)
+{
+	birds = copyFrom->birds;
+	cats = copyFrom->cats;
+	fish = copyFrom->fish;
+}
+
 void Keeper::addBird()
 {
 	Bird newBird;
