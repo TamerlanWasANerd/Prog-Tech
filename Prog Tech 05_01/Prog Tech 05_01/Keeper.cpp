@@ -48,40 +48,76 @@ void Keeper::addFish()
 
 bool Keeper::removeBird(int index)
 {
-	if (index < 0 || index >= birds.size())
+	/*if (index < 0 || index >= birds.size())
 	{
 		std::cout << "No bird with such index!\n";
 
 		return false;
+	}*/
+
+	try
+	{
+		birds.erase(birds.begin() + index);
+
+		throw (index);
+	}
+	catch (int incorrectIndex)
+	{
+		std::cout << "Incorrect bird index " << incorrectIndex << "!\n";
+
+		return false;
 	}
 
-	birds.erase(birds.begin() + index);
 	return true;
 }
 
 bool Keeper::removeCat(int index)
 {
-	if (index < 0 || index >= cats.size())
+	/*if (index < 0 || index >= cats.size())
 	{
 		std::cout << "No cat with such index!\n";
 
 		return false;
+	}*/
+
+	try
+	{
+		if (index > 0 && index < cats.size())
+			cats.erase(cats.begin() + index);
+		else
+			throw (index);
+	}
+	catch (int incorrectIndex)
+	{
+		std::cout << "Incorrect cat index " << incorrectIndex << "!\n";
+
+		return false;
 	}
 
-	cats.erase(cats.begin() + index);
 	return true;
 }
 
 bool Keeper::removeFish(int index)
 {
-	if (index < 0 || index >= fish.size())
+	/*if (index < 0 || index >= fish.size())
 	{
 		std::cout << "No fish with such index!\n";
 
 		return false;
-	}
+	}*/
 
-	fish.erase(fish.begin() + index);
+	try
+	{
+		fish.erase(fish.begin() + index);
+
+		throw (index);
+	}
+	catch (int incorrectIndex)
+	{
+		std::cout << "Incorrect fish index " << incorrectIndex << "!\n";
+
+		return false;
+	}
 	return true;
 }
 
@@ -104,7 +140,7 @@ bool Keeper::load()
 	fish.clear();
 
 	std::ifstream file("data.txt");
-	std::string line, type ;
+	std::string line, type;
 
 	while (line != "\t\t\t")
 	{
@@ -153,7 +189,7 @@ bool Keeper::load()
 		else
 		{
 			std::cout << "Invalid save file!\n";
-			return false; 
+			return false;
 		}
 	}
 
@@ -170,7 +206,7 @@ bool Keeper::describe()
 
 	for (Bird a : birds)
 	{
-		a.describe();
+		std::cout << a;
 	}
 
 	for (Cat a : cats)

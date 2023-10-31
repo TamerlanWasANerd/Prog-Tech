@@ -20,6 +20,14 @@ Bird::Bird(Bird* copyFrom)
 	geographicRange = copyFrom->geographicRange;
 }
 
+void Bird::operator=(Bird const& rightHand)
+{
+	breed = rightHand.breed;
+	color = rightHand.color;
+	food = rightHand.food;
+	geographicRange = rightHand.geographicRange;
+}
+
 void Bird::createBird()
 {
 	std::cout << "Enter bird's breed: ";
@@ -35,4 +43,12 @@ void Bird::createBird()
 void Bird::describe()
 {
 	std::cout << "Bird " << breed << ' ' << color << ' ' << food << ' ' << geographicRange << '\n';
+}
+
+std::ostream& operator<<(std::ostream& leftHandSide, const Bird& rightHandSide)
+{
+	leftHandSide << "Bird " << rightHandSide.breed << ' ' << rightHandSide.color << ' ' 
+		<< rightHandSide.food << ' ' << rightHandSide.geographicRange << '\n';
+
+	return leftHandSide;
 }
