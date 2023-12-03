@@ -129,9 +129,14 @@
   <ItemGroup>
     <ClCompile Include="Price.cpp" />
     <ClCompile Include="Prog Tech 05_02.cpp" />
+    <ClCompile Include="reverseSentences.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Price.h" />
+    <ClInclude Include="reverseSentences.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="file.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
