@@ -4,7 +4,7 @@ Price::Price()
 {
 	itemName = "";
 	storeName = "";
-	price = -1;
+	priceRub = -1;
 
 	std::cout << "Standard constructor called.\n";
 }
@@ -14,7 +14,7 @@ Price::Price(std::string itemName, std::string storeName, double price)
 {
 	this->itemName = itemName;
 	this->storeName = storeName;
-	this->price = price;
+	this->priceRub = price;
 
 	std::cout << "Parameterized constructor called.\n";
 }
@@ -23,7 +23,7 @@ Price::Price(Price* copyFrom)
 {
 	itemName = copyFrom->itemName;
 	storeName = copyFrom->storeName;
-	price = copyFrom->price;
+	priceRub = copyFrom->priceRub;
 
 	std::cout << "Copy constructor called.\n";
 }
@@ -43,9 +43,9 @@ void Price::setStoreName(std::string storeName)
 	this->storeName = storeName;
 }
 
-void Price::setPrice(double price)
+void Price::setPriceRub(double price)
 {
-	this->price = price;
+	this->priceRub = price;
 }
 
 
@@ -59,9 +59,9 @@ std::string Price::getStoreName()
 	return storeName;
 }
 
-double Price::getPrice()
+double Price::getPriceRub()
 {
-	return price;
+	return priceRub;
 }
 
 
@@ -90,15 +90,15 @@ std::ostream& operator<<(std::ostream& leftHandSide, const Price& rightHandSide)
 	leftHandSide
 		<< rightHandSide.itemName << " "
 		<< rightHandSide.storeName << " "
-		<< rightHandSide.price << "\n";
+		<< rightHandSide.priceRub << "\n";
 
 	return leftHandSide;
 }
 
 void operator>>(Price& leftHandSide,
-	std::tuple<std::string, std::string, unsigned short, unsigned short> rightHandSide)
+	std::tuple<std::string, std::string, double> rightHandSide)
 {
 	leftHandSide.itemName = std::get<0>(rightHandSide);
 	leftHandSide.storeName = std::get<1>(rightHandSide);
-	leftHandSide.price = std::get<2>(rightHandSide);
+	leftHandSide.priceRub = std::get<2>(rightHandSide);
 }

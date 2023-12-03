@@ -7,7 +7,7 @@ class Price
 {
 public:
 	std::string itemName, storeName;
-	double price;
+	double priceRub;
 public:
 	Price();
 	Price(std::string itemName, std::string storeName, double price);
@@ -17,11 +17,11 @@ public:
 
 	void setItemName(std::string itemName);
 	void setStoreName(std::string storeName);
-	void setPrice(double price);
+	void setPriceRub(double price);
 
 	std::string getItemName();
 	std::string getStoreName();
-	double getPrice();
+	double getPriceRub();
 
 	friend bool operator>(const Price& leftHandSide, const Price& rightHandSide);
 	friend bool operator>=(const Price& leftHandSide, const Price& rightHandSide);
