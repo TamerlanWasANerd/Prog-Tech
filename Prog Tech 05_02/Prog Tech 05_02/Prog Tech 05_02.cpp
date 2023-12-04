@@ -97,17 +97,17 @@ keyscan:
 
 		switch (option)
 		{
-		case '1':
+		case 1:
 			std::cin >> newItemName;
 			prices[index].setItemName(newItemName);
 
 			break;
-		case '2':
+		case 2:
 			std::cin >> newStoreName;
 			prices[index].setStoreName(newStoreName);
 
 			break;
-		case '3':
+		case 3:
 			std::cin >> newPriceRub;
 			prices[index].setPriceRub(newPriceRub);
 
