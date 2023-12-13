@@ -1,12 +1,13 @@
 #include <algorithm>
 #include <conio.h>
-#include <vector>
+#include "DoublyLinkedList.h"
+#include "insertionSort.h"
 #include "Price.h"
 #include "reverseSentences.h"
 
 int main()
 {
-	std::vector<Price> prices;
+	DoublyLinkedList prices;
 	Price newPrice;
 	std::string newItemName, newStoreName, filterItemName;
 	double newPriceRub;
@@ -14,7 +15,7 @@ int main()
 	bool filterEmpty = true;
 
 	char c;
-	int index, option;
+	int index, option, i = 0;
 
 menu:
 	std::cout
@@ -41,33 +42,34 @@ keyscan:
 		newPrice >> std::tuple<std::string, std::string, double>
 			(newItemName, newStoreName, newPriceRub);
 
-		prices.push_back(newPrice);
+		prices.insertNode(0, newPrice);
 
-		std::sort(prices.begin(), prices.end());
+		insertionSort(prices);
 
 		break;
 	case '2':
 		std::cout << "Enter index of the price to be removed: ";
 		std::cin >> index;
-		prices.erase(prices.begin() + index);
+		prices.removeNode(index);
 
 		break;
 	case '3':
-		if (prices.empty())
+		if (prices.size() == 0)
 			std::cout << "Nothing to display!\n";
 		else
-			for (Price a : prices) std::cout << a;
+			for (i = 0; i < prices.size(); i++) 
+				std::cout << prices[i];
 
 		break;
 	case '4':
 		std::cout << "Enter the item name to match: ";
 		std::cin >> filterItemName;
 
-		for (Price a : prices)
+		for (i = 0; i < prices.size(); i++)
 		{
-			if (a.getItemName() == filterItemName)
+			if (prices[i].getItemName() == filterItemName)
 			{
-				std::cout << a;
+				std::cout << prices[i];
 
 				filterEmpty = false;
 			}
@@ -118,7 +120,7 @@ keyscan:
 			break;
 		}
 
-		std::sort(prices.begin(), prices.end());
+		insertionSort(prices);
 
 		break;
 	case '6':
@@ -127,7 +129,7 @@ keyscan:
 		else
 			std::cout << "No prices to copy!\n";
 
-		prices.push_back(newPrice);
+		prices.insertNode(0, newPrice);
 
 		break;
 	case '7':

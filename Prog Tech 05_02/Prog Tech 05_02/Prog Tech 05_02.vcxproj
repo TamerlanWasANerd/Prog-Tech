@@ -127,11 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DoublyLinkedList.cpp" />
+    <ClCompile Include="insertionSort.cpp" />
     <ClCompile Include="Price.cpp" />
     <ClCompile Include="Prog Tech 05_02.cpp" />
     <ClCompile Include="reverseSentences.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DoublyLinkedList.h" />
+    <ClInclude Include="insertionSort.h" />
     <ClInclude Include="Price.h" />
     <ClInclude Include="reverseSentences.h" />
   </ItemGroup>
